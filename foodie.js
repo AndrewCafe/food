@@ -68,6 +68,17 @@ container.appendChild(feedbackWindow);
 container.appendChild(breaker1);
 //container.appendChild(machinePic);
 
+//Enter key even listener
+//Reference: https://www.techiedelight.com/submit-form-with-enter-key-javascript/
+document.getElementById('foodEntry').addEventListener('keyup', function(event) {
+        if (event.code === 'Enter')
+        {
+            event.preventDefault();
+           add();
+        }
+    });
+
+
 //Button event listener, when button clicked, run add function
 document.querySelector('#button1').addEventListener("click", function () {
     add();
@@ -135,11 +146,16 @@ function remove() {
 }
 
 function select() {
+    if (foodArray.length == 0) {
+        document.getElementById('feedbackWindow').value ="No options to select from!";
+    }
+    else{
 let randMax = foodArray.length
 let randomNumber = Math.floor(Math.random() * randMax)
 //document.getElementById('feedbackWindow').value = "Random Max: " + randMax +" Random Number: "+ randomNumber;
 
-document.getElementById('feedbackWindow').value = "You're going to eat: " + foodArray[randomNumber]+ "! A fine choice!";
+document.getElementById('feedbackWindow').value = "You're going to eat: " + foodArray[randomNumber]+ "! \rA fine choice!";
+}
 }
 
 function reset() {
