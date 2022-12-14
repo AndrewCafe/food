@@ -109,7 +109,7 @@ function add() {
     let userFood = document.getElementById('foodEntry').value;
 
     if (userFood == "") {
-        document.getElementById('feedbackWindow').value = "Nothing entered!\rPlease enter something!\r\rCurrent List\r\r" + foodArray;
+        document.getElementById('feedbackWindow').value = "Nothing entered!\r\rPlease enter something!\r\rCurrent List\r\r" + foodArray;
         errorCount++;
     }
 
