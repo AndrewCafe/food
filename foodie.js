@@ -22,7 +22,8 @@ const breaker1 = document.createElement('br');
 const breaker2 = document.createElement('br');
 
 //Set Attributes
-button1.setAttribute("id", "button1", type ="submit");
+button1.setAttribute("id", "button1");
+document.getElementById("button1").type = "submit";
 button2.setAttribute("id", "button2");
 button3.setAttribute("id", "button3");
 button4.setAttribute("id", "button4");
