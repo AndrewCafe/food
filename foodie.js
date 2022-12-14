@@ -23,7 +23,6 @@ const breaker2 = document.createElement('br');
 
 //Set Attributes
 button1.setAttribute("id", "button1");
-document.getElementById("button1").type = "submit";
 button2.setAttribute("id", "button2");
 button3.setAttribute("id", "button3");
 button4.setAttribute("id", "button4");
@@ -63,16 +62,17 @@ container.classList.add('button4');
 container.appendChild(button1);
 container.appendChild(button2);
 container.appendChild(button3);
-container.appendChild(button4);
+
 container.appendChild(breaker2);
 container.appendChild(feedbackWindow);
 container.appendChild(breaker1);
+container.appendChild(button4);
 //container.appendChild(machinePic);
 
 //Enter key even listener
 //Reference: https://www.techiedelight.com/submit-form-with-enter-key-javascript/
 
-document.getElementById('foodEntry').addEventListener('keyup', function(event) {
+document.getElementById('foodEntry').addEventListener('keydown', function(event) {
         if (event.code === 'Enter')
         {
             event.preventDefault();
