@@ -6,63 +6,86 @@ const container = document.querySelector('#container');
 //Create button, text box elements, images, etc.
 let machinePic = document.createElement('img')
 machinePic.src =
-    'public/img/bMachine2.PNG';
+    'public/img/foods.PNG';
 let startDiv = document.createElement('div');
-let finalTime = document.createElement("textarea");
+let feedbackWindow = document.createElement("textarea");
 
 const button1 = document.createElement('button');
 const button2 = document.createElement('button');
+const button3 = document.createElement('button');
+const button4 = document.createElement('button');
 const breaker1 = document.createElement('br');
 const breaker2 = document.createElement('br');
 
 //Set Attributes
 button1.setAttribute("id", "button1");
 button2.setAttribute("id", "button2");
-finalTime.setAttribute("id", "finalTime");
-finalTime.setAttribute("cols", "44");
+feedbackWindow.setAttribute("id", "feedbackWindow");
+feedbackWindow.setAttribute("cols", "44");
 
 //Set Style
 machinePic.style = "width: 250px;"
-button1.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #4CAF50;color: white;";
-button2.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #f44336;color: white;";
-//finalTime.style = "resize: none; font-size: large";
-finalTime.style = "width: 75%; font-size: large";
+button1.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #808080;color: white;";
+button2.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #808080;color: white;";
+button3.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #4CAF50;color: white;";
+button4.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #f44336;color: white;";
+//feedbackWindow.style = "resize: none; font-size: large";
+feedbackWindow.style = "width: 75%; font-size: large";
 
 
 //Set text
-button1.innerHTML = 'Calculate';
-button2.innerHTML = 'Reset';
+button1.innerHTML = 'Add Food';
+button2.innerHTML = 'Delete Food';
+button3.innerHTML = 'Make Selection';
+button4.innerHTML = 'Reset';
 
 //Generate Class
 container.classList.add('title');
 container.classList.add('breaker1');
 container.classList.add('breaker2');
 container.classList.add('machinePic');
-container.classList.add('finalTime');
+container.classList.add('feedbackWindow');
 container.classList.add('img');
 container.classList.add('button1');
 container.classList.add('button2');
+container.classList.add('button3');
+container.classList.add('button4');
 
 //Append to container
 container.appendChild(button1);
 container.appendChild(button2);
+container.appendChild(button3);
+container.appendChild(button4);
 container.appendChild(breaker2);
-container.appendChild(finalTime);
+container.appendChild(feedbackWindow);
 container.appendChild(breaker1);
 container.appendChild(machinePic);
 
-//Button event listener, when button clicked, run bake function
+//Button event listener, when button clicked, run add function
 document.querySelector('#button1').addEventListener("click", function () {
-    bake();
+    add();
 });
 
 document.querySelector('#button2').addEventListener("click", function () {
-    document.getElementById('sTime').value = "";
+    document.getElementById('foodEntry').value = "";
     document.getElementById('eTime').value = "";
-    document.getElementById('finalTime').value = "Reset Complete!";
+    document.getElementById('feedbackWindow').value = "Reset Complete!";
 });
 
-document.getElementById('finalTime').value = "Minimum Requirement: Select Stop Time";
+document.querySelector('#button3').addEventListener("click", function () {
+    //document.getElementById('foodEntry').value = "";
+    //document.getElementById('eTime').value = "";
+    //document.getElementById('feedbackWindow').value = "Reset Complete!";
+});
+
+document.querySelector('#button4').addEventListener("click", function () {
+    //document.getElementById('foodEntry').value = "";
+    //document.getElementById('eTime').value = "";
+    //document.getElementById('feedbackWindow').value = "Reset Complete!";
+});
+
+
+document.getElementById('feedbackWindow').value = "Minimum Requirement: Select Stop Time";
 
 /*
 Bread Logic
@@ -71,7 +94,7 @@ Bread Logic
 */
 
 
-function bake() {
+function add() {
     //Get current date/time from system, ie: default start time
     let start = new Date();
     start.setSeconds(0); //set seconds to 0 for simplicity sake
@@ -80,7 +103,7 @@ function bake() {
     console.log("startTime: " + start);
 
     //Collects user start and/or end time info
-    let startInfo = document.getElementById('sTime').value
+    let startInfo = document.getElementById('foodEntry').value
     let endInfo = document.getElementById('eTime').value
 
     //Initializing arrays to hold user data
@@ -103,7 +126,7 @@ function bake() {
         }
 
         let defaultTime = defaultHour + ":" + defaultMinute;
-        document.getElementById('sTime').value = defaultTime;
+        document.getElementById('foodEntry').value = defaultTime;
         startArray.push(start.getHours());
         startArray.push(start.getMinutes());
     }
@@ -190,7 +213,7 @@ function bake() {
     }
 
     //Display result in text box
-    document.getElementById('finalTime').value = result;
+    document.getElementById('feedbackWindow').value = result;
 
 }
 //Helper Functions
@@ -198,10 +221,10 @@ function bake() {
 //Function that determines if date of end time must be advanced one day
 function timeAdjustment(startHour, endHour) {
     let adjustment = 0;
-    let sTime = startHour;
+    let foodEntry = startHour;
     let eTime = endHour;
 
-    if (sTime <= eTime) {
+    if (foodEntry <= eTime) {
         return adjustment;
     }
     else {
