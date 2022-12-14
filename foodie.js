@@ -106,12 +106,13 @@ function add() {
         document.getElementById('foodEntry').value = "";
     }
 
-/*
+    /*
 if (errorCount >= 5){
     document.getElementById('feedbackWindow').value ="NOT ADDING FOOD????"
 }
-}
 */
+}
+
 //Removing last items
 function remove() {
     if (foodArray.length == 0) {
