@@ -65,9 +65,10 @@ container.appendChild(button3);
 
 container.appendChild(breaker2);
 container.appendChild(feedbackWindow);
-container.appendChild(breaker1);
 container.appendChild(button4);
-//container.appendChild(machinePic);
+container.appendChild(breaker1);
+
+container.appendChild(machinePic);
 
 //Enter key even listener
 //Reference: https://www.techiedelight.com/submit-form-with-enter-key-javascript/
@@ -165,59 +166,4 @@ function reset() {
     document.getElementById('feedbackWindow').value = "Reset Complete!\r\rCurrent List\r\rNothing!";
 }
 
-
-
-
-
-function doubleCheck(userFood) {
-    let choice = userFood;
-    let arrayCounter = foodArray.length;
-
-    if (arrayCounter == zero) {
-        choice = "false"
-        return choice;
-    }
-}
-
-
-
-//Function that determines if date of end time must be advanced one day
-function timeAdjustment(startHour, endHour) {
-    let adjustment = 0;
-    let foodEntry = startHour;
-    let eTime = endHour;
-
-    if (foodEntry <= eTime) {
-        return adjustment;
-    }
-    else {
-        adjustment += 1;
-    }
-    return adjustment;
-}
-
-//Splits the time string into numbers that are returned in the array
-function timeSplitters(timeString) {
-    let string = timeString;
-    let returnArray = [];
-    let startLength = timeString.length;
-    let hourString = "";
-    let minuteString = "";
-    for (i = 0; i < startLength; i++) {
-        if (string.charAt(i) !== ":") {
-            hourString += string.charAt(i)
-        }
-        else {
-            i++;
-            break;
-        }
-    }
-    for (i; i < startLength; i++) {
-        minuteString += string.charAt(i);
-    }
-    let h = parseInt(hourString);
-    let m = parseInt(minuteString);
-    returnArray.push(h, m);
-    return returnArray;
-}
 
