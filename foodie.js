@@ -10,7 +10,7 @@ const container = document.querySelector('#container');
 
 //Create button, text box elements, images, etc.
 let machinePic = document.createElement('img')
-machinePic.src = 'public/img/foods.PNG';
+machinePic.src = 'public/img/foods.png';
 let startDiv = document.createElement('div');
 let feedbackWindow = document.createElement("textarea");
 
