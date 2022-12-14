@@ -30,7 +30,7 @@ feedbackWindow.setAttribute("id", "feedbackWindow");
 //feedbackWindow.setAttribute("cols", "44");
 
 //Set Style
-machinePic.style = "width: 250px;"
+machinePic.style = "width: 200px;"
 button1.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #808080;color: white;";
 button2.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #808080;color: white;";
 button3.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #4CAF50;color: white;";
@@ -66,10 +66,11 @@ container.appendChild(button4);
 container.appendChild(breaker2);
 container.appendChild(feedbackWindow);
 container.appendChild(breaker1);
-//container.appendChild(machinePic);
+container.appendChild(machinePic);
 
 //Enter key even listener
 //Reference: https://www.techiedelight.com/submit-form-with-enter-key-javascript/
+
 document.getElementById('foodEntry').addEventListener('keyup', function(event) {
         if (event.code === 'Enter')
         {
