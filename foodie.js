@@ -36,7 +36,7 @@ button2.style = "text-align: center; font-size: larger; margin: 10px;cursor:poin
 button3.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #4CAF50;color: white;";
 button4.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #f44336;color: white;";
 //feedbackWindow.style = "resize: none; font-size: large";
-feedbackWindow.style = "width: 75%; height: 250px;  font-size: large";
+feedbackWindow.style = "width: 75%; height: 150px;  font-size: large";
 
 
 
