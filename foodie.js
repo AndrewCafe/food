@@ -67,7 +67,6 @@ container.appendChild(breaker2);
 container.appendChild(feedbackWindow);
 container.appendChild(button4);
 container.appendChild(breaker1);
-
 container.appendChild(machinePic);
 
 //Enter key even listener
