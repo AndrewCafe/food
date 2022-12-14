@@ -4,9 +4,8 @@ const container = document.querySelector('#container');
 
 
 //Create button, text box elements, images, etc.
-let machinePic = document.createElement('img')
-machinePic.src =
-    'public/img/foods.PNG';
+let foodPic = document.createElement('img')
+foodPic.src ='public/img/foods.PNG';
 let startDiv = document.createElement('div');
 let feedbackWindow = document.createElement("textarea");
 
@@ -24,7 +23,7 @@ feedbackWindow.setAttribute("id", "feedbackWindow");
 feedbackWindow.setAttribute("cols", "44");
 
 //Set Style
-machinePic.style = "width: 250px;"
+foodPic.style = "width: 250px;"
 button1.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #808080;color: white;";
 button2.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #808080;color: white;";
 button3.style = "text-align: center; font-size: larger; margin: 10px;cursor:pointer;background-color: #4CAF50;color: white;";
@@ -43,7 +42,7 @@ button4.innerHTML = 'Reset';
 container.classList.add('title');
 container.classList.add('breaker1');
 container.classList.add('breaker2');
-container.classList.add('machinePic');
+container.classList.add('foodPic');
 container.classList.add('feedbackWindow');
 container.classList.add('img');
 container.classList.add('button1');
@@ -59,7 +58,7 @@ container.appendChild(button4);
 container.appendChild(breaker2);
 container.appendChild(feedbackWindow);
 container.appendChild(breaker1);
-container.appendChild(machinePic);
+container.appendChild(foodPic);
 
 //Button event listener, when button clicked, run add function
 document.querySelector('#button1').addEventListener("click", function () {
